@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wanilla Development</title>
+    <link rel="stylesheet" href="dev.css" />
+    <script async src="../bundle/wanilla.dev.js"></script>
+  </head>
+
+  <body>
+    <h1>wanilla Development</h1>
+
+    <div id="version">VERSION</div>
+
+    <div id="container"></div>
+
+    <input type="checkbox" checked />
+
+    <include-example src="./includes/example.html" title="123">...loading 1</include-example>
+
+    <table>
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+    </table>
+
+    <div>
+      <p>
+        <button id="btn">CLICK ME</button>
+      </p>
+      <div>div</div>
+      <p>text</p>
+      <ul id="list">
+        <li>element one</li>
+        <li>element two</li>
+        <li>element three</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <p>
+      <a href="licht.dev">link to licht.dev</a>
+    </p>
+
+    <p>
+      <i>italic</i> - <b>bold</b> - <span>span</span>
+      <br />
+      <br />
+      <input type="text" />
+    </p>
+
+    <script>
+      window.addEventListener('load', () => {
+        // dynamically change title from "123" to "new title"
+        const example = document.getElementsByTagName('include-example').item(0)
+        if (example) example.setAttribute('title', '"new title"')
+      })
+    </script>
+  </body>
+</html>

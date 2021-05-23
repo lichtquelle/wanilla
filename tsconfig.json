@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2015", "DOM"],
+    "target": "ES2015",
+    "module": "CommonJS",
+
+    "outDir": "lib",
+    "rootDir": "src",
+
+    "declaration": true,
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

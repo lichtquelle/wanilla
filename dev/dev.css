@@ -1,0 +1,230 @@
+:root {
+  --black: #0c0e14;
+  --white: #f8f8f2;
+  --blue: #8be9fd;
+  --gray: #6272a4;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --red: #ff79c6;
+  --violet: #bd93f9;
+  --yellow: #f1fa8c;
+
+  --border: #21283f;
+
+  --table-border: #3e4763;
+  --table-background: #161720;
+
+  --fontSize: 18px;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--fontSize);
+
+  margin: 0;
+  padding: 0;
+
+  text-decoration: none;
+  list-style-type: none;
+
+  color: var(--gray);
+  background-color: var(--black);
+}
+
+body {
+  margin: 24px;
+}
+
+/** MARGIN */
+h1,
+h2,
+h3,
+h4,
+p,
+hr {
+  margin: 18px 0px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+  color: var(--violet);
+}
+
+/** HEADING */
+
+h1::before,
+h2::before,
+h3::before,
+h4::before {
+  font-size: 14px;
+  color: var(--gray);
+}
+h1::before {
+  content: ' H1 ';
+}
+h2::before {
+  content: ' H2 ';
+}
+h3::before {
+  content: ' H3 ';
+}
+h4::before {
+  content: ' H4 ';
+}
+
+/** PARAGRAPH */
+p,
+p > * {
+  color: var(--white);
+}
+p::before {
+  font-size: 16px;
+  position: relative;
+  top: -2px;
+  color: var(--gray);
+  content: ' ¶\00a0\00a0  ';
+}
+
+/** DIV */
+div {
+  border: 1px var(--border) solid;
+  border-radius: 2px;
+  margin-top: 8px;
+  padding: 8px;
+}
+
+/** BR */
+br {
+  content: '&nbsp;' !important;
+}
+br::after {
+  content: '↵\000A';
+  color: var(--gray);
+  white-space: pre;
+}
+
+/** LINK */
+a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+/** SPAN */
+span {
+  color: var(--green);
+}
+
+/** LINE */
+
+hr {
+  color: var(--gray);
+  border-width: 2px;
+  border-style: dashed;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+/** INPUT */
+input {
+  background-color: var(--gray);
+  border: none;
+  border-radius: 2px;
+  padding: 4px;
+}
+
+/** TABLE */
+table {
+  border-collapse: collapse;
+  margin-top: 8px;
+  text-align: left;
+}
+
+table tr:nth-child(even) {
+  background-color: var(--table-background);
+}
+
+table th,
+table td {
+  padding: 8px 12px;
+  background-color: unset;
+  color: var(--white);
+  font-size: 16px;
+  border: 1px var(--table-border) solid;
+  margin: 0;
+  min-width: 120px;
+  max-width: 160px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+/** CHECKBOX */
+input[type='checkbox'] {
+  transform: scale(1.2);
+  padding: 10px;
+}
+
+/** BUTTON */
+button {
+  color: var(--red);
+  border: none;
+  cursor: pointer;
+}
+button::before {
+  position: relative;
+  top: -2px;
+  content: '[ ';
+}
+button::after {
+  position: relative;
+  top: -2px;
+  content: ' ]';
+}
+
+/** LIST */
+ul {
+  margin-left: 0px;
+}
+
+li {
+  margin-left: 16px;
+  color: var(--yellow);
+}
+
+ul::before {
+  font-size: 14px;
+  position: relative;
+  top: -1px;
+  color: var(--orange);
+
+  content: ' <ul> ';
+}
+
+ul::after {
+  font-size: 14px;
+  position: relative;
+  top: -1px;
+  color: var(--orange);
+
+  content: ' </ul> ';
+}
+
+li::before {
+  font-size: 14px;
+  position: relative;
+  top: -1px;
+
+  content: ' <li> ';
+}
+
+li::after {
+  font-size: 14px;
+  position: relative;
+  top: -1px;
+
+  content: ' </li> ';
+}

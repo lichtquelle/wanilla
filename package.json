@@ -1,0 +1,52 @@
+{
+  "name": "wanilla",
+  "version": "0.0.4",
+  "description": "🍦 A 2kB JQuery like Wrapper around Vanilla JavaScript.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:webpack": "webpack --config webpack/webpack.dev.config.cjs --watch",
+    "dev:server": "five-server",
+    "build": "npm run bundle",
+    "bundle": "npm run clean && npm run version && tsc && webpack --config webpack/webpack.config.cjs",
+    "version": "extract version src/version.ts && prettier --write src/version.ts",
+    "format:check": "prettier --check src/**/*",
+    "format": "prettier --write src/**/*",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint --fix src --ext .ts,.tsx",
+    "clean": "rimraf bundle coverage lib",
+    "test": "jest --collectCoverage",
+    "test:full": "npm run clean && npm i && npm run build && npm test",
+    "prepublishOnly": "npm run clean && npm run build",
+    "preReleaseHook": "clean build",
+    "publish": "publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lichtquelle/wanilla.git"
+  },
+  "author": "Yannick Deubel (https://github.com/yandeu)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lichtquelle/wanilla/issues"
+  },
+  "homepage": "https://github.com/lichtquelle/wanilla#readme",
+  "devDependencies": {
+    "@yandeu/eslint-config": "^0.0.2",
+    "@yandeu/extract": "^0.0.3",
+    "@yandeu/prettier-config": "^0.0.2",
+    "jest": "^26.6.3",
+    "npm-run-all": "^4.1.5",
+    "publish-cli": "^1.7.0",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.0.0",
+    "typescript": "^4.2.4",
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0"
+  },
+  "funding": {
+    "url": "https://github.com/sponsors/yandeu"
+  }
+}

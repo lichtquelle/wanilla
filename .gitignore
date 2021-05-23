@@ -1,0 +1,9 @@
+*.dev.js
+*.gz
+*.txt
+*.zip
+bundle/**/*
+coverage
+lib
+node_modules
+package-lock.json

@@ -1,0 +1,21 @@
+<include-style src="./includes/feature.css"></include-style>
+
+<style>
+  #feature p {
+    color: red;
+  }
+</style>
+
+<div id="feature">
+  <h2>Some dynamic {TITLE}</h2>
+  <p>Hello from feature component</p>
+</div>
+
+<!-- this inline script will be executed -->
+<script>
+  W('#feature').get.firstChild().css.set('font-size', '26px')
+</script>
+
+<p id="line">Another line Here</p>
+
+<include-script src="./includes/feature.js"></include-script>

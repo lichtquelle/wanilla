@@ -1,0 +1,8 @@
+*.gz
+*.zip
+*.dev.js
+coverage
+dev
+node_modules
+src
+package-lock.json

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script async src="../bundle/wanilla.min.js"></script>
+    <!-- <script src="https://unpkg.com/wanilla@0.0.0/bundle/wanilla.min.js"></script> -->
+    <link rel="stylesheet" href="dev.css" />
+
+    <title>wanilla</title>
+  </head>
+
+  <body>
+    <h1>Wanilla Development</h1>
+
+    <button id="btn">CLICK ME</button>
+
+    <include-html src="./includes/feature.html" title="COOL FEATURE">...loading 1</include-html>
+
+    <ul id="list">
+      <li>element one</li>
+      <li>element two</li>
+      <li>element three</li>
+    </ul>
+
+    <script>
+      window.addEventListener('load', () => {
+        W.autoInclude()
+
+        const list = W('#list')
+
+        const span = W('span', { id: 'hello', class: 'foo' }, '<div>subtitle</div>').appendTo(W('h1'))
+        span.style.color = 'lightgreen'
+
+        W('li', null, 'new item').appendTo(list)
+
+        list.appendChild(W('li', null, 'new item'))
+
+        W.all('#list li').item(1).class.add('someclass').innerText = 'modified element'
+
+        W.all('#list li').forEach((el, i, p) => {
+          console.log(i, el, el._isFElement, p)
+        })
+
+        W.all('#list li').each((el, i, p) => {
+          console.log(i, el, el._isFElement)
+        })
+
+        W('#btn').on('click', () => {
+          list.appendChild(W('li', null, '[click] new item'))
+        })
+      })
+    </script>
+  </body>
+</html>
