@@ -278,12 +278,13 @@ const include = async (
     }
 
     // parse to html
-    const html = parser.parseFromString(text, 'text/html')
+    const html = parser.parseFromString(`<div>${text}</div>`, 'text/html')
+    const body = html.body.childNodes[0]
 
     let lastNode = p
 
-    for (let i = 0; i < html.body.childNodes.length; i++) {
-      const child = html.body.childNodes[i] as HTMLElement
+    for (let i = 0; i < body.childNodes.length; i++) {
+      const child = body.childNodes[i] as HTMLElement
 
       // skip TextNodes
       if (child.nodeType === 3) continue
